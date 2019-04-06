@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "1027015271522",
+    "firebase_url": "https://cphacks19.firebaseio.com",
+    "project_id": "cphacks19",
+    "storage_bucket": "cphacks19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027015271522:android:5db05624c9a39738",
+        "android_client_info": {
+          "package_name": "com.example.cphacks19"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1027015271522-9ltokim83guf77mpoj8eilor1g8nn146.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cphacks19",
+            "certificate_hash": "3bd742357e612ad20395a01729d00120c45eeb7a"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDXqBMxcltXcSNnVrO3v735rinS6_duSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027015271522-to0llqg5f9ndv7i7bs197kn0g7u7humb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
