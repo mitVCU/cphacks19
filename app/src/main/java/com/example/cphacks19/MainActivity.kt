@@ -6,29 +6,17 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 
 import kotlinx.android.synthetic.main.activity_main.*
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var dbRef: DatabaseReference
-
-    //Model holds emotion values
-    private lateinit var model : EmotionViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
-        val dbRef = FirebaseDatabase.getInstance().reference
+      //  setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+       // changeIntentToLogin()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -46,14 +34,8 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-   fun onClickPlay(view: View){
-
-        val intent = Intent(this, PlayActivity::class.java)
-
+    fun changeIntentToLogin(){
+        val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
-
     }
-
-
 }

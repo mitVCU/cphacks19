@@ -9,18 +9,36 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".PlayActivity">
-        </activity>
+
+
+
+        <meta-data android:name="com.snapchat.kit.sdk.clientId" android:value="c039c8c2-12f0-4153-a143-e43dfa148940" />
+        <meta-data android:name="com.snapchat.kit.sdk.redirectUrl" android:value="cphacks19://snap-kit/oauth2" />
+        <meta-data android:name="com.snapchat.kit.sdk.scopes" android:resource="@array/snap_connect_scopes" /> <!-- This should be a string array of scopes !-->
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".MainActivity"/>
         <activity
-                android:name=".MainActivity"
                 android:label="@string/app_name"
-                android:theme="@style/AppTheme.NoActionBar">
+                android:theme="@style/AppTheme.NoActionBar"
+                android:name="com.snapchat.kit.sdk.SnapKitActivity"
+                android:launchMode="singleTask"
+        >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                        android:scheme="cphacks19"
+                        android:host="localhost"
+                        android:path="/HomeActivity.class"
+                />
             </intent-filter>
+
         </activity>
+
     </application>
 
 </manifest>
