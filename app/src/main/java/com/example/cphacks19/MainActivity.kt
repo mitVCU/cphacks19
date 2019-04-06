@@ -21,7 +21,7 @@ import android.support.v4.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
 
-    //private lateinit var dbRef: DatabaseReference
+    private lateinit var dbRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
 
-       // FirebaseApp.initializeApp(this)
-        //dbRef = FirebaseDatabase.getInstance().reference
+
+        dbRef = FirebaseDatabase.getInstance().reference
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
