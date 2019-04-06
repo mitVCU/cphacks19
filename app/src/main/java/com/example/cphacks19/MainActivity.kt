@@ -9,14 +9,18 @@ import android.view.MenuItem
 import android.view.View
 
 import kotlinx.android.synthetic.main.activity_main.*
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var dbRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
+        val dbRef = FirebaseDatabase.getInstance().reference
 
     }
 
