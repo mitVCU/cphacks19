@@ -3,6 +3,7 @@
           package="com.example.cphacks19">
 
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 
     <application

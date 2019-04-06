@@ -1,9 +1,11 @@
 package com.example.cphacks19;
+import android.app.Activity;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
+import android.support.v7.app.AppCompatActivity;
 import com.microsoft.projectoxford.face.*;
 import com.microsoft.projectoxford.face.contract.*;
 
@@ -16,7 +18,7 @@ public class FaceRecognizer {
     private  final String subscriptionKey = "b07f31b292fb400abc7360abcabd3323";
     private EmotionViewModel model;
 
-    public FaceRecognizer(MainActivity activity){
+    public FaceRecognizer(AppCompatActivity activity){
        model = ViewModelProviders.of(activity).get(EmotionViewModel.class);
    }
 
@@ -110,8 +112,4 @@ class FaceResultAttributeFactory {
                 return 0;
         }
     }
-}
-
-interface EmotionValueReadyCallback{
-    double onValueReady();
 }
