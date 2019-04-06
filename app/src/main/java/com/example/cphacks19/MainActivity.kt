@@ -16,12 +16,19 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var dbRef: DatabaseReference
 
+    //Model holds emotion values
+    private lateinit var model : EmotionViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         val dbRef = FirebaseDatabase.getInstance().reference
 
+        fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
