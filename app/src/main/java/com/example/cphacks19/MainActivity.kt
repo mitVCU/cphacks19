@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var dbRef: DatabaseReference
 
-    //Model holds emotion values
+    //Model holds current emotion value
     private lateinit var model : EmotionViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
