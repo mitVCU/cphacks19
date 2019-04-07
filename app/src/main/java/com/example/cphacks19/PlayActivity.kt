@@ -43,26 +43,26 @@ class PlayActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
 
-        if (checkCameraHardware(this)) {
-            init()
-        }
-    }
         model = EmotionViewModel()
         model.getEmotionLiveData().observe(this, android.arch.lifecycle.Observer { value -> kotlin.run{
             Log.d(TAG, "observing data change")
             score += value!!.toFloat()
             Toast.makeText(this, model.getEmotionLiveData().value!!.toString(),Toast.LENGTH_SHORT).show()
         }})
+
         if (checkCameraHardware(this)) {
             init()
         }
+
     }
+
+
 
     private fun init() {
         if (camera == null) {
             println("camera is null")
         }
-
+        camera.addCallback(getCameraCallback())
         var counter = 5
         tv_counter.text = counter.toString()
         val handler = Handler()
@@ -76,6 +76,8 @@ class PlayActivity : AppCompatActivity() {
                 if (counter > 0) {
 
                     handler.postDelayed(this, 1000)
+                }else{
+                    camera.takePicture()
                 }
 
 
