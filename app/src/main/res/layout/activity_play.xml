@@ -15,6 +15,18 @@
             android:adjustViewBounds="true"
             app:autoFocus="true"
             app:aspectRatio="4:3"
-            app:facing="back"
+            app:facing="front"
             app:flash="auto"/>
+
+    <TextView
+            android:id="@+id/tv_counter"
+            android:layout_width="wrap_content"
+              android:layout_height="54dp"
+
+              android:layout_alignParentBottom="true" android:layout_marginBottom="50dp"
+              android:layout_alignParentEnd="true" android:layout_marginEnd="154dp"
+              android:layout_alignParentStart="true" android:layout_marginStart="153dp"
+    android:textSize="30sp"
+    android:textAlignment="center"/>
+
 </RelativeLayout>

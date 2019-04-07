@@ -3,8 +3,8 @@ package com.example.cphacks19
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.util.Log
@@ -12,6 +12,7 @@ import android.util.Log
 import kotlin.concurrent.schedule
 import com.google.android.cameraview.CameraView
 
+import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_play.*
 import android.os.Environment.DIRECTORY_PICTURES
 import android.graphics.BitmapFactory
@@ -41,6 +42,11 @@ class PlayActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
+
+        if (checkCameraHardware(this)) {
+            init()
+        }
+    }
         model = EmotionViewModel()
         model.getEmotionLiveData().observe(this, android.arch.lifecycle.Observer { value -> kotlin.run{
             Log.d(TAG, "observing data change")
@@ -57,10 +63,25 @@ class PlayActivity : AppCompatActivity() {
             println("camera is null")
         }
 
-        camera.facing = CameraView.FACING_FRONT
-        camera.addCallback(getCameraCallback())
-        camera.start()
-        startTimer()
+        var counter = 5
+        tv_counter.text = counter.toString()
+        val handler = Handler()
+        handler.postDelayed(object : Runnable {
+            override fun run() {
+
+                counter--
+                tv_counter.text = counter.toString()
+
+
+                if (counter > 0) {
+
+                    handler.postDelayed(this, 1000)
+                }
+
+
+            }
+        }, 1000)  //the time is in miliseconds
+
     }
 
     private fun getCameraCallback(): CameraView.Callback {
