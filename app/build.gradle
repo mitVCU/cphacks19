@@ -9,7 +9,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.cphacks19"
-        minSdkVersion 21
+        minSdkVersion 22
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -24,8 +24,8 @@ android {
 }
 
 dependencies {
-    implementation 'com.snapchat.kit.sdk:login:1.1.4'
-    implementation 'com.snapchat.kit.sdk:core:1.1.4'
+    implementation 'com.snapchat.kit.sdk:login:1.2.0'
+    implementation 'com.snapchat.kit.sdk:core:1.2.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.github.google:cameraview:c3f7e7dbd2'
@@ -36,7 +36,8 @@ dependencies {
     implementation 'com.microsoft.projectoxford:face:1.4.3'
     implementation "android.arch.lifecycle:extensions:1.1.1"
     implementation "android.arch.lifecycle:viewmodel:1.1.1"
-
+    implementation 'com.github.jkwiecien:EasyImage:2.1.0'
+    implementation 'pub.devrel:easypermissions:1.2.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
