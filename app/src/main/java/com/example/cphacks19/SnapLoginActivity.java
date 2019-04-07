@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 import com.snapchat.kit.sdk.SnapLogin;
 import android.view.LayoutInflater;
+import com.snapchat.kit.sdk.core.controller.LoginStateController;
 
 
 public class SnapLoginActivity extends AppCompatActivity {
@@ -29,9 +30,30 @@ public class SnapLoginActivity extends AppCompatActivity {
         View mLoginButton = SnapLogin.getButton(getContext(), (ViewGroup)rootView);
 
 
+        final LoginStateController.OnLoginStateChangedListener mLoginStateChangedListener =
+                new LoginStateController.OnLoginStateChangedListener() {
+                    @Override
+                    public void onLoginSucceeded() {
+                        // Here you could update UI to show login success
+                        Toast.makeText(getContext(), "Successfully logged in", Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onLoginFailed() {
+                        // Here you could update UI to show login failure
+                        Toast.makeText(getContext(), "Failed  logged in", Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onLogout() {
+                        // Here you could update UI to reflect logged out state
+                        Toast.makeText(getContext(), "Successfully logged in", Toast.LENGTH_LONG).show();
+                    }
+                };
 
 
 
     }
     private Context getContext(){return this;}
+
 }

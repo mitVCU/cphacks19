@@ -17,6 +17,8 @@ import android.widget.Toast
 import android.content.pm.PackageManager
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
+import com.snapchat.kit.sdk.SnapLogin
+import java.security.AccessController.getContext
 
 
 class MainActivity : AppCompatActivity() {
@@ -50,8 +52,8 @@ class MainActivity : AppCompatActivity() {
     }
 
    fun onClickPlay(view: View){
-
-        val intent = Intent(this, PlayActivity::class.java)
+        Toast.makeText(this, ""+SnapLogin.isUserLoggedIn(this) , Toast.LENGTH_LONG).show();
+        val intent = Intent(this, SnapLoginActivity::class.java)
 
         startActivity(intent)
 
