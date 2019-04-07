@@ -1,10 +1,12 @@
 package com.example.cphacks19;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.text.GetChars;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,11 +32,14 @@ public class SnapLoginActivity extends AppCompatActivity {
         View mLoginButton = SnapLogin.getButton(getContext(), (ViewGroup)rootView);
 
 
+
         final LoginStateController.OnLoginStateChangedListener mLoginStateChangedListener =
                 new LoginStateController.OnLoginStateChangedListener() {
                     @Override
                     public void onLoginSucceeded() {
-                        // Here you could update UI to show login success
+                        //TODO: Change to main activity
+                        Intent intent = new Intent(getContext(), MainActivity.class);
+                        startActivity(intent);
                         Toast.makeText(getContext(), "Successfully logged in", Toast.LENGTH_LONG).show();
                     }
 
@@ -50,8 +55,7 @@ public class SnapLoginActivity extends AppCompatActivity {
                         Toast.makeText(getContext(), "Successfully logged in", Toast.LENGTH_LONG).show();
                     }
                 };
-
-
+        SnapLogin.getLoginStateController(this).addOnLoginStateChangedListener(mLoginStateChangedListener);
 
     }
     private Context getContext(){return this;}
