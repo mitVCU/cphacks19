@@ -24,6 +24,8 @@ android {
 }
 
 dependencies {
+    implementation 'com.snapchat.kit.sdk:login:1.1.4'
+    implementation 'com.snapchat.kit.sdk:core:1.1.4'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.github.google:cameraview:c3f7e7dbd2'
