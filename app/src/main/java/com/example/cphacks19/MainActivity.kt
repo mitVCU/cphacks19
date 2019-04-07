@@ -4,7 +4,7 @@ import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -25,16 +25,13 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var dbRef: DatabaseReference
 
-    //Model holds emotion values
+    //Model holds current emotion value
     private lateinit var model : EmotionViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
-
-
         dbRef = FirebaseDatabase.getInstance().reference
     }
 
